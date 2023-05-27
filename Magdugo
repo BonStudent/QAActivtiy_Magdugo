@@ -7,6 +7,9 @@ def find_square_root(number):
     else:
         return math.sqrt(number)
 
+def cube(n):
+    return n ** 3
+
 class SquareRootTestCase(unittest.TestCase):
     def test_positive_number(self):
         result = find_square_root(16)
@@ -19,6 +22,19 @@ class SquareRootTestCase(unittest.TestCase):
     def test_negative_number(self):
         result = find_square_root(-16)
         self.assertEqual(result, "Square root of a negative number is undefined.")
+
+class CubeTestCase(unittest.TestCase):
+    def test_positive_number(self):
+        result = cube(3)
+        self.assertEqual(result, 27)
+
+    def test_zero(self):
+        result = cube(0)
+        self.assertEqual(result, 0)
+
+    def test_negative_number(self):
+        result = cube(-2)
+        self.assertEqual(result, -8)
 
 if _name_ == '_main_':
     unittest.main()
